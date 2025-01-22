@@ -9,7 +9,9 @@ const Page = () => {
   });
 
   // Handle Input Change
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -52,13 +54,18 @@ const Page = () => {
                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
                   ADDRESS
                 </h2>
-                <p className="mt-1">Office Of The Deputy Commissioner Central, Karachi</p>
+                <p className="mt-1">
+                  Office Of The Deputy Commissioner Central, Karachi
+                </p>
               </div>
               <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">
                   EMAIL
                 </h2>
-                <a className="text-yellow-500 leading-relaxed" href="mailto:mubashirmpa2008@gmail.com">
+                <a
+                  className="text-yellow-500 leading-relaxed"
+                  href="mailto:mubashirmpa2008@gmail.com"
+                >
                   mubashirmpa2008@gmail.com
                 </a>
                 <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs mt-4">
@@ -69,7 +76,9 @@ const Page = () => {
             </div>
           </div>
           <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-            <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">Send Your Feedback!</h2>
+            <h2 className="text-gray-900 text-lg mb-1 font-medium title-font">
+              Order Here & Send Your Feedback!
+            </h2>
             <div className="relative mb-4">
               <label htmlFor="name" className="leading-7 text-sm text-gray-600">
                 Name
@@ -85,7 +94,10 @@ const Page = () => {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="email" className="leading-7 text-sm text-gray-600">
+              <label
+                htmlFor="email"
+                className="leading-7 text-sm text-gray-600"
+              >
                 Email
               </label>
               <input
@@ -99,7 +111,10 @@ const Page = () => {
               />
             </div>
             <div className="relative mb-4">
-              <label htmlFor="message" className="leading-7 text-sm text-gray-600">
+              <label
+                htmlFor="message"
+                className="leading-7 text-sm text-gray-600"
+              >
                 Message
               </label>
               <textarea
@@ -118,7 +133,8 @@ const Page = () => {
               Send
             </button>
             <p className="text-xs text-gray-500 mt-3">
-              Your feedback fuels our passion and motivates us to keep delivering the best!
+              Your feedback fuels our passion and motivates us to keep
+              delivering the best!
             </p>
           </div>
         </div>

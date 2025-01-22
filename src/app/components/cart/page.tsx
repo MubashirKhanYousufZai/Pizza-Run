@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import { useCart } from "../context/CartContext"; 
 import { FaCartArrowDown } from "react-icons/fa";
-import { useCart } from "../context/CartContext"; // Import Cart Context
 import { CiWallet } from "react-icons/ci";
 
 // Define Product Type
@@ -17,7 +17,7 @@ interface Product {
 
 const Pizza = () => {
   // Define State with the Correct Type
-  const [products, setProducts] = useState<Product[]>([]);  
+  const [products, setProducts] = useState<Product[]>([]);
   const { addToCart } = useCart(); // Get addToCart function from context
 
   useEffect(() => {
@@ -63,17 +63,19 @@ const Pizza = () => {
                 </p>
                 {/* Add to Cart Button */}
                 <div className="flex gap-2">
-                <button
-                  onClick={() => addToCart(product)}
-                  className="inline-flex items-center justify-center w-12 h-12 mt-5 rounded-full bg-orange-100 hover:bg-orange-200 transition duration-300"
-                >
-                  <a href="/components/cart">
-                    <FaCartArrowDown className="text-orange-700 text-2xl" />
-                  </a>
-                </button>
-                <button className="inline-flex items-center justify-center w-12 h-12 mt-5 rounded-full bg-orange-100 hover:bg-orange-200 transition duration-300">
-                    <a href="/components/payment"><CiWallet className="text-orange-700 text-2xl"/></a>
-                </button>
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="inline-flex items-center justify-center w-12 h-12 mt-5 rounded-full bg-orange-100 hover:bg-orange-200 transition duration-300"
+                  >
+                    <a href="/components/contact">
+                      <FaCartArrowDown className="text-orange-700 text-2xl" />
+                    </a>
+                  </button>
+                  <button className="inline-flex items-center justify-center w-12 h-12 mt-5 rounded-full bg-orange-100 hover:bg-orange-200 transition duration-300">
+                    <a href="/components/payment">
+                      <CiWallet className="text-orange-700 text-2xl" />
+                    </a>
+                  </button>
                 </div>
               </div>
             </div>

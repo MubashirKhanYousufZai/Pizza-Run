@@ -13,18 +13,18 @@ const Serves = () => {
             What We Serve...
           </h1>
           <p className="mt-4 text-lg text-gray-700 max-w-2xl mx-auto">
-            We serve pizza, burgers, fries, and drinks that will satisfy your cravings. 
-            From classic combinations to unique flavors, there is something for everyone on our menu.
+            We serve pizza, burgers, fries, and drinks that will satisfy your
+            cravings. From classic combinations to unique flavors, there is
+            something for everyone on our menu.
           </p>
         </div>
         <div className="h-1 w-24 bg-orange-600 mx-auto mb-12"></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
           {/* Pizzas */}
           <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
             <div className="relative w-full h-56">
               <Image
-                src="/pizza.jpeg" 
+                src="/pizza.jpeg"
                 alt="Pizza"
                 fill
                 className="rounded-lg object-cover"
@@ -34,10 +34,14 @@ const Serves = () => {
               Pizzas <GiFullPizza className="text-2xl" />
             </h2>
             <p className="text-gray-600 mt-2">
-              Our pizzas are made with fresh ingredients and topped with gooey cheese for a delicious experience. 
-              Each bite is packed with flavor!
+              Our pizzas are made with fresh ingredients and topped with gooey
+              cheese for a delicious experience. Each bite is packed with
+              flavor!
             </p>
-            <a className="text-orange-700 hover:underline inline-flex items-center mt-3 font-medium" href="/components/menu">
+            <a
+              className="text-orange-700 hover:underline inline-flex items-center mt-3 font-medium"
+              href="/components/menu"
+            >
               Order Now <VscArrowSmallRight className="text-xl ml-1" />
             </a>
           </div>
@@ -46,7 +50,7 @@ const Serves = () => {
           <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
             <div className="relative w-full h-56">
               <Image
-                src="/burger.jpeg" 
+                src="/burger.jpeg"
                 alt="Burger"
                 fill
                 className="rounded-lg object-cover"
@@ -56,10 +60,13 @@ const Serves = () => {
               Burgers <FaHamburger className="text-2xl" />
             </h2>
             <p className="text-gray-600 mt-2">
-              Our burgers are grilled to perfection with fresh lettuce, ripe tomatoes, and delicious sauces. 
-              Juicy and full of flavor!
+              Our burgers are grilled to perfection with fresh lettuce, ripe
+              tomatoes, and delicious sauces. Juicy and full of flavor!
             </p>
-            <a className="text-orange-700 hover:underline inline-flex items-center mt-3 font-medium" href="/components/menu">
+            <a
+              className="text-orange-700 hover:underline inline-flex items-center mt-3 font-medium"
+              href="/components/menu"
+            >
               Order Now <VscArrowSmallRight className="text-xl ml-1" />
             </a>
           </div>
@@ -68,7 +75,7 @@ const Serves = () => {
           <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
             <div className="relative w-full h-56">
               <Image
-                src="/fries.jpeg" 
+                src="/fries.jpeg"
                 alt="Fries"
                 fill
                 className="rounded-lg object-cover"
@@ -78,14 +85,16 @@ const Serves = () => {
               Fries <GiFrenchFries className="text-2xl" />
             </h2>
             <p className="text-gray-600 mt-2">
-              Our fries are crispy and golden, perfect for dipping or enjoying on their own! 
-              Classic or loaded, they are always a great choice.
+              Our fries are crispy and golden, perfect for dipping or enjoying
+              on their own! Classic or loaded, they are always a great choice.
             </p>
-            <a className="text-orange-700 hover:underline inline-flex items-center mt-3 font-medium" href="/components/menu">
+            <a
+              className="text-orange-700 hover:underline inline-flex items-center mt-3 font-medium"
+              href="/components/menu"
+            >
               Order Now <VscArrowSmallRight className="text-xl ml-1" />
             </a>
           </div>
-
         </div>
       </div>
     </section>

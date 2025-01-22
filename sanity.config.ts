@@ -14,10 +14,10 @@ import {schema} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
 
 export default defineConfig({
+  title: "Pizza Run",
   basePath: '/studio',
-  projectId,
-  dataset,
-  // Add and edit the content schema in the './sanity/schemaTypes' folder
+  projectId: "vze3xelz",
+  dataset: "roduction",
   schema,
   plugins: [
     structureTool({structure}),
@@ -25,4 +25,4 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
-})
+});
