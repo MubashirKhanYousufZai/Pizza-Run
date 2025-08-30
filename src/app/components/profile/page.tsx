@@ -1,42 +1,92 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation"; 
 
-const page = () => {
+
+const LoginPage = () => {
+  const router = useRouter();
+
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      setError("Please fill in both fields.");
+      return;
+    }
+
+
+    if (email === "abc@gmail.com" && password === "12345678") {
+      setError("");
+      localStorage.setItem("token", "dummy-auth-token");
+
+      alert("Login Successful!");
+      router.push("/");
+    } else {
+      setError("Invalid email or password.");
+    }
+  };
+
   return (
-    <div>
-      <div className="flex justify-center items-center h-screen bg-gray-200">
-        <div className="bg-slate-100 w-[500px] p-8 rounded-lg shadow-lg">
-          <h1 className="text-center text-black text-3xl font-bold">Login</h1>
-          <p className="text-center text-lg font-normal mt-4 text-slate-500">
-            Please login using account details below
-          </p>
-          <div className="mt-4">
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="bg-white w-96 p-8 rounded-lg shadow-lg">
+        <h1 className="text-center text-2xl font-bold">Login</h1>
+        <p className="text-center text-sm text-gray-500 mt-2">
+          Please login using your account details below.
+        </p>
+
+        {error && <p className="text-center text-red-500 mt-2">{error}</p>}
+
+        <form onSubmit={handleSubmit} className="mt-6">
+
+          <div className="mb-4">
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full h-10 border-slate-500 border-2 rounded-md p-2"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full h-10 border-2 border-gray-300 rounded-md p-3"
             />
+          </div>
+          <div className="mb-6">
             <input
               type="password"
               placeholder="Password"
-              className="w-full h-10 border-slate-500 border-2 rounded-md p-2 mt-4"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full h-10 border-2 border-gray-300 rounded-md p-3"
             />
           </div>
-          <p className="text-lg font-normal mt-4 text-slate-500">
-            Forgot your Password?
-          </p>
-          <button className="bg-orange-500 text-white cursor-pointer w-full h-10 rounded-sm mt-4">
+
+          <div className="mb-4">
+            <a href="#" className="text-orange-500 text-sm hover:underline">
+              Forgot your password?
+            </a>
+          </div>
+
+          <button
+            type="submit"
+            className="bg-orange-500 text-white w-full h-10 rounded-md hover:bg-orange-600"
+          >
             Sign In
           </button>
-          <p className="text-center text-lg font-normal mt-4 text-slate-500">
-            Dont have an Account?{" "}
-            <a href="#" className="text-blue-500">
-              Create Account
-            </a>
-          </p>
-        </div>
+        </form>
+
+
+        <p className="text-center text-sm text-gray-500 mt-4">
+          Don't have an account?{" "}
+          <a href="#" className="text-orange-500 hover:underline">
+            Create Account
+          </a>
+        </p>
       </div>
     </div>
   );
 };
 
-export default page;
+export default LoginPage;
