@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
 
 const Page = () => {
   const [formData, setFormData] = useState({
@@ -26,11 +25,15 @@ const Page = () => {
     }
 
     const whatsappMessage = `Hello! 👋\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
     const whatsappUrl = `https://wa.me/923152669152?text=${encodeURIComponent(
       whatsappMessage
     )}`;
 
     window.open(whatsappUrl, "_blank");
+
+    // ✅ Reset form after sending
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -38,7 +41,7 @@ const Page = () => {
       <section className="text-gray-600 body-font relative font-[Poppins]">
         <div className="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
           {/* Map Section */}
-          <div className="lg:w-2/3 md:w-1/2 bg-gray-200 rounded-2xl overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative shadow-lg">
+          <div className="lg:w-2/3 md:w-1/2 bg-gray-200 rounded-2xl overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative shadow-xl">
             <iframe
               width="100%"
               height="100%"
@@ -79,13 +82,12 @@ const Page = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0 rounded-2xl shadow-lg p-8">
-            <h2 className="text-gray-900 text-xl mb-5 font-bold text-center text-orange-700">
-              Order Here & Send Your Feedback! 🍕
-            </h2>
-
+          <div className="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-10 mt-8 md:mt-0 rounded-2xl shadow-xl p-8">
+              <h2 className="text-2xl mb-6 font-bold text-center text-orange-700">
+                Order Here & Send Your Feedback! 🍕
+              </h2>
             {/* Name */}
-            <div className="mb-4">
+            <div className="mb-5">
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-700 mb-2"
@@ -97,14 +99,14 @@ const Page = () => {
                 id="name"
                 name="name"
                 placeholder="Enter your name"
-                className="w-full bg-white rounded-xl border border-gray-300 px-4 py-3 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none shadow-sm"
+                className="w-full bg-white rounded-xl border border-gray-300 px-4 py-3 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none shadow-sm transition"
                 value={formData.name}
                 onChange={handleChange}
               />
             </div>
 
             {/* Email */}
-            <div className="mb-4">
+            <div className="mb-5">
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700 mb-2"
@@ -116,7 +118,7 @@ const Page = () => {
                 id="email"
                 name="email"
                 placeholder="Enter your email"
-                className="w-full bg-white rounded-xl border border-gray-300 px-4 py-3 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none shadow-sm"
+                className="w-full bg-white rounded-xl border border-gray-300 px-4 py-3 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none shadow-sm transition"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -134,7 +136,7 @@ const Page = () => {
                 id="message"
                 name="message"
                 placeholder="Type your message..."
-                className="w-full bg-white rounded-xl border border-gray-300 px-4 py-3 h-32 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none shadow-sm resize-none"
+                className="w-full bg-white rounded-xl border border-gray-300 px-4 py-3 h-32 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 outline-none shadow-sm resize-none transition"
                 value={formData.message}
                 onChange={handleChange}
               />
@@ -142,13 +144,13 @@ const Page = () => {
 
             {/* Button */}
             <button
-              className="w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-orange-400 to-orange-600 shadow-md hover:scale-105 transition-transform duration-300"
+              className="w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-orange-400 to-orange-600 shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
               onClick={handleSend}
             >
               Send via WhatsApp
             </button>
 
-            <p className="text-xs text-gray-500 mt-4 text-center">
+            <p className="text-xs text-gray-500 mt-4 text-center leading-relaxed">
               Your feedback fuels our passion and motivates us to keep delivering
               the best! ❤️
             </p>
